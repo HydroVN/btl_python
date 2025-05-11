@@ -1,0 +1,79 @@
+[
+    {
+        "ma_sp": "SP001",
+        "ten_sp": "Áo thun nam",
+        "nha_cung_cap": "Nike",
+        "gia": 250000,
+        "so_luong": 100
+    },
+    {
+        "ma_sp": "SP002",
+        "ten_sp": "Quần jeans nữ",
+        "nha_cung_cap": "Adidas",
+        "gia": 500000,
+        "so_luong": 50
+    },
+    {
+        "ma_sp": "SP003",
+        "ten_sp": "Giày thể thao",
+        "nha_cung_cap": "Puma",
+        "gia": 1200000,
+        "so_luong": 30
+    },
+    {
+        "ma_sp": "SP004",
+        "ten_sp": "Đồng hồ thông minh",
+        "nha_cung_cap": "Apple",
+        "gia": 15000000,
+        "so_luong": 20
+    },
+    {
+        "ma_sp": "SP005",
+        "ten_sp": "Balo du lịch",
+        "nha_cung_cap": "The North Face",
+        "gia": 800000,
+        "so_luong": 15
+    },
+    {
+        "ma_sp": "SP006",
+        "ten_sp": "Tai nghe không dây",
+        "nha_cung_cap": "Sony",
+        "gia": 3000000,
+        "so_luong": 25
+    },
+    {
+        "ma_sp": "SP007",
+        "ten_sp": "Máy tính xách tay",
+        "nha_cung_cap": "Dell",
+        "gia": 20000000,
+        "so_luong": 10
+    },
+    {
+        "ma_sp": "SP008",
+        "ten_sp": "Điện thoại thông minh",
+        "nha_cung_cap": "Samsung",
+        "gia": 18000000,
+        "so_luong": 5
+    },
+    {
+        "ma_sp": "SP009",
+        "ten_sp": "Máy ảnh kỹ thuật số",
+        "nha_cung_cap": "Canon",
+        "gia": 12000000,
+        "so_luong": 8
+    },
+    {
+        "ma_sp": "SP010",
+        "ten_sp": "Loa Bluetooth",
+        "nha_cung_cap": "JBL",
+        "gia": 1500000,
+        "so_luong": 12
+    },
+    {
+        "ma_sp": "sp011",
+        "ten_sp": "Bánh Mỳ",
+        "nha_cung_cap": "abc",
+        "gia": 20000,
+        "so_luong": 20
+    }
+]
