@@ -55,11 +55,13 @@ def tim_san_pham():
     try:
         for sp in danh_sach1:
             if sp["ma_sp"].lower() == ma_sp.lower():
+                print("=" * 30)
                 print(f"Mã sản phẩm: {sp['ma_sp']}")
                 print(f"Tên sản phẩm: {sp['ten_sp']}")
                 print(f"Nhà cung cấp: {sp['nha_cung_cap']}")
                 print(f"Giá bán: {sp['gia']}")
                 print(f"Số lượng: {sp['so_luong']}")
+                print("=" * 30)
                 return
         print("Không tìm thấy sản phẩm.")
     except FileNotFoundError:
