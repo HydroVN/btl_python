@@ -1,0 +1,20 @@
+[
+    {
+        "ma_khach_hang": "KH001",
+        "ho_ten": "Nguyễn Văn A",
+        "dia_chi": "TP.HCM",
+        "so_dien_thoai": "0901234567"
+    },
+    {
+        "ma_khach_hang": "kh002",
+        "ho_ten": "Nguyễn Văn Tùng",
+        "dia_chi": "Hà Nội",
+        "so_dien_thoai": "0976421999"
+    },
+    {
+        "ma_khach_hang": "kh003",
+        "ho_ten": "Đỗ Duy Văn",
+        "dia_chi": "Hà Nội",
+        "so_dien_thoai": "0968570751"
+    }
+]

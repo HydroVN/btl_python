@@ -109,6 +109,66 @@ def xoa_san_pham():
         print("Không tìm thấy file sản phẩm.")
     except json.JSONDecodeError:
         print("Lỗi khi đọc file sản phẩm.")
+# Đọc danh sách khách hàng từ file
+with open("d:/btl_python/khach_hang.json", "r", encoding="utf-8") as f:
+    danh_sach2= json.load(f)
+def nhap_khach_hang():
+    try:
+        while True:
+            them_ma_khach_hang = input("Nhập mã khách hàng mới: ").strip()
+            # Kiểm tra mã khách hàng đã tồn tại
+            if any(kh.get("ma_khach_hang", "").lower() == them_ma_khach_hang.lower() for kh in danh_sach2):
+                print("Mã khách hàng đã tồn tại. Vui lòng nhập mã khác.")
+                continue
+            ten_khach_hang = input("Nhập tên khách hàng: ").strip()
+            dia_chi = input("Nhập địa chỉ: ")
+            so_dien_thoai = input("Nhập số điện thoại: ")
+            # Thêm khách hàng mới vào danh sách
+            danh_sach2.append({
+                "ma_khach_hang": them_ma_khach_hang,
+                "ho_ten": ten_khach_hang,
+                "dia_chi": dia_chi,
+                "so_dien_thoai": so_dien_thoai
+            })
+            break
+    except FileNotFoundError:
+        print("Không tìm thấy file khách hàng.")
+    except json.JSONDecodeError:
+        print("Lỗi khi đọc file khách hàng.")
+    else:
+        with open("d:/btl_python/khach_hang.json", "w", encoding="utf-8") as f:
+            json.dump(danh_sach2, f, ensure_ascii=False, indent=4)
+            print("Đã thêm khách hàng thành công.")
+def hien_thi_danh_sach_khach_hang():
+    try:
+        if not danh_sach2:
+            print("Danh sách khách hàng trống.")
+            return
+        print(f"{'Mã khách hàng':<15} | {'Tên khách hàng':<30} | {'Địa chỉ':<20} | {'SĐT':<10}")
+        print("-" * 95)
+        for kh in danh_sach2:
+            print(f"{kh['ma_khach_hang']:<15} | {kh['ho_ten']:<30} | {kh['dia_chi']:<20} | {kh['so_dien_thoai']:<10}")
+    except FileNotFoundError:
+        print("Không tìm thấy file khách hàng.")
+    except json.JSONDecodeError:
+        print("Lỗi khi đọc file khách hàng.")
+def tim_khach_hang():
+    ma_khach_hang = input("Nhập mã khách hàng cần tìm: ").strip()
+    try:
+        for kh in danh_sach2:
+            if kh["ma_khach_hang"].lower() == ma_khach_hang.lower():
+                print("=" * 30)
+                print(f"Mã khách hàng: {kh['ma_khach_hang']}")
+                print(f"Tên khách hàng: {kh['ho_ten']}")
+                print(f"Địa chỉ: {kh['dia_chi']}")
+                print(f"Số điện thoại: {kh['so_dien_thoai']}")
+                print("=" * 30)
+                return
+        print("Không tìm thấy khách hàng.")
+    except FileNotFoundError:
+        print("Không tìm thấy file khách hàng.")
+    except json.JSONDecodeError:
+        print("Lỗi khi đọc file khách hàng.")
 if __name__ == "__main__":
     while True:
         print("=== QUẢN LÝ CỬA HÀNG ===")
@@ -133,14 +193,25 @@ if __name__ == "__main__":
         print("19. Thống kê số lượng sản phẩm tồn kho")
         print("20. Thoát")
         print("============================")
-        lua_chon = int(input("Nhập lựa chọn của bạn (1–7): "))
+        lua_chon = int(input("Nhập lựa chọn của bạn (1–20): "))
         if lua_chon == 1:
             nhap_san_pham()
         elif lua_chon == 2:
             hien_thi_danh_sach()
         elif lua_chon == 3:
             tim_san_pham()
+        elif lua_chon == 4:
+            cap_nhat_thong_tin_san_pham()
+        elif lua_chon == 5:
+            xoa_san_pham()
+        elif lua_chon == 6:
+            nhap_khach_hang()
+        elif lua_chon == 7:
+            hien_thi_danh_sach_khach_hang()
+        elif lua_chon == 8:
+            tim_khach_hang()
         elif lua_chon == 20:
+            print("Cảm ơn bạn đã sử dụng chương trình!")
             break
         else:
             print("Lựa chọn không hợp lệ. Vui lòng nhập lại.")
