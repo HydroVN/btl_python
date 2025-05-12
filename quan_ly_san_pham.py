@@ -113,7 +113,7 @@ def xoa_san_pham():
         print("Lỗi khi đọc file sản phẩm.")
 # Đọc danh sách khách hàng từ file
 with open("d:/btl_python/khach_hang.json", "r", encoding="utf-8") as f:
-    danh_sach2= json.load(f)
+    danh_sach2 = json.load(f)
 def nhap_khach_hang():
     try:
         while True:
