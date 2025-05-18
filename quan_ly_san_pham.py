@@ -171,6 +171,46 @@ def tim_khach_hang():
         print("Không tìm thấy file khách hàng.")
     except json.JSONDecodeError:
         print("Lỗi khi đọc file khách hàng.")
+def cap_nhat_thong_tin_khach_hang():
+    ma_khach_hang = input("Nhập mã khách hàng cần cập nhật: ").strip()
+    try:
+        for kh in danh_sach2:
+            if kh["ma_khach_hang"].lower() == ma_khach_hang.lower():
+                ten_khach_hang = input("Nhập tên khách hàng mới: ").strip()
+                dia_chi = input("Nhập địa chỉ mới: ")
+                so_dien_thoai = input("Nhập số điện thoại mới: ")
+                kh.update({
+                    "ho_ten": ten_khach_hang,
+                    "dia_chi": dia_chi,
+                    "so_dien_thoai": so_dien_thoai
+                })
+                with open("d:/btl_python/khach_hang.json", "w", encoding="utf-8") as f:
+                    json.dump(danh_sach2, f, ensure_ascii=False, indent=4)
+                print("Cập nhật thành công.")
+                return
+        print("Không tìm thấy khách hàng.")
+    except FileNotFoundError:
+        print("Không tìm thấy file khách hàng.")
+    except json.JSONDecodeError:
+        print("Lỗi khi đọc file khách hàng.")
+    except Exception as e:
+        print(f"Lỗi không xác định: {e}")
+def xoa_khach_hang():
+    ma_khach_hang = input("Nhập mã khách hàng cần xóa: ").strip()
+    try:
+        for kh in danh_sach2:
+            if kh["ma_khach_hang"].lower() == ma_khach_hang.lower():
+                danh_sach2.remove(kh)
+                with open("d:/btl_python/khach_hang.json", "w", encoding="utf-8") as f:
+                    json.dump(danh_sach2, f, ensure_ascii=False, indent=4)
+                print("Xóa khách hàng thành công.")
+                return
+        print("Không tìm thấy khách hàng.")
+    except FileNotFoundError:
+        print("Không tìm thấy file khách hàng.")
+    except json.JSONDecodeError:
+        print("Lỗi khi đọc file khách hàng.")
+
 if __name__ == "__main__":
     while True:
         print("=== QUẢN LÝ CỬA HÀNG ===")
