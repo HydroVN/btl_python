@@ -252,6 +252,10 @@ if __name__ == "__main__":
             hien_thi_danh_sach_khach_hang()
         elif lua_chon == 8:
             tim_khach_hang()
+        elif lua_chon == 9:
+            cap_nhat_thong_tin_khach_hang()
+        elif lua_chon == 10:
+            xoa_khach_hang()
         elif lua_chon == 20:
             print("Cảm ơn bạn đã sử dụng chương trình!")
             break
