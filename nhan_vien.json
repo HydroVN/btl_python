@@ -1,0 +1,26 @@
+[
+    {
+        "ma_nhan_vien": "NV001",
+        "ho_ten": "Nguyễn Văn A",
+        "ngay_sinh": "01-01-2000",
+        "vi_tri": "Quản lý",
+        "so_dien_thoai": "0901234567",
+        "noi_lam_viec": "Hà Nội"
+    },
+    {
+        "ma_nhan_vien": "NV002",
+        "ho_ten": "Nguyễn Văn B",
+        "ngay_sinh": "02-02-1995",
+        "vi_tri": "Nhân viên bán hàng",
+        "so_dien_thoai": "0912345678",
+        "noi_lam_viec": "TP.HCM"
+    },
+    {
+        "ma_nhan_vien": "NV003",
+        "ho_ten": "Nguyễn Văn C",
+        "ngay_sinh": "03-03-1990",
+        "vi_tri": "Kế toán",
+        "so_dien_thoai": "0923456789",
+        "noi_lam_viec": "Đà Nẵng"
+    }
+]

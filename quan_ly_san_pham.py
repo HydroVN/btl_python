@@ -210,7 +210,36 @@ def xoa_khach_hang():
         print("Không tìm thấy file khách hàng.")
     except json.JSONDecodeError:
         print("Lỗi khi đọc file khách hàng.")
-
+def nhap_nhan_vien():
+    try:
+        # Đọc danh sách nhân viên từ file
+        with open("d:/btl_python/nhan_vien.json", "r", encoding="utf-8") as f:
+            danh_sach3 = json.load(f)
+        while True:
+            them_ma_nhan_vien = input("Nhập mã nhân viên mới: ").strip()
+            # Kiểm tra mã nhân viên đã tồn tại
+            if any(nv.get("ma_nhan_vien", "").lower() == them_ma_nhan_vien.lower() for nv in danh_sach2):
+                print("Mã nhân viên đã tồn tại. Vui lòng nhập mã khác.")
+                continue
+            ten_nhan_vien = input("Nhập tên nhân viên: ").strip()
+            dia_chi = input("Nhập địa chỉ: ")
+            so_dien_thoai = input("Nhập số điện thoại: ")
+            # Thêm nhân viên mới vào danh sách
+            danh_sach2.append({
+                "ma_nhan_vien": them_ma_nhan_vien,
+                "ho_ten": ten_nhan_vien,
+                "dia_chi": dia_chi,
+                "so_dien_thoai": so_dien_thoai
+            })
+            break
+    except FileNotFoundError:
+        print("Không tìm thấy file nhân viên.")
+    except json.JSONDecodeError:
+        print("Lỗi khi đọc file nhân viên.")
+    else:
+        with open("d:/btl_python/nhan_vien.json", "w", encoding="utf-8") as f:
+            json.dump(danh_sach3, f, ensure_ascii=False, indent=4)
+            print("Đã thêm nhân viên thành công.")
 if __name__ == "__main__":
     while True:
         print("=== QUẢN LÝ CỬA HÀNG ===")
@@ -256,6 +285,8 @@ if __name__ == "__main__":
             cap_nhat_thong_tin_khach_hang()
         elif lua_chon == 10:
             xoa_khach_hang()
+        elif lua_chon == 11:
+            nhap_nhan_vien()
         elif lua_chon == 20:
             print("Cảm ơn bạn đã sử dụng chương trình!")
             break
