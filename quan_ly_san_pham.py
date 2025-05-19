@@ -259,12 +259,17 @@ if __name__ == "__main__":
         print("14. Cập nhật thông tin nhân viên")
         print("15. Xóa nhân viên")
         print("16. Lập hóa đơn bán hàng")
-        print("17. Thống kê doanh thu")
-        print("18. Thống kê số lượng sản phẩm đã bán")
-        print("19. Thống kê số lượng sản phẩm tồn kho")
-        print("20. Thoát")
+        print("17. Xuất hóa đơn")
+        print("18. Thống kê doanh thu")
+        print("19. Thống kê số lượng sản phẩm đã bán")
+        print("20. Thống kê số lượng sản phẩm tồn kho")
+        print("21. Xuất báo cáo tồn kho")
+        print("22. Xuất báo cáo doanh thu")
+        print("23. Xuất báo cáo khách hàng")
+        print("24. Xuất báo cáo nhân viên")
+        print("25. Thoát")
         print("============================")
-        lua_chon = int(input("Nhập lựa chọn của bạn (1–20): "))
+        lua_chon = int(input("Nhập lựa chọn của bạn (1–25): "))
         if lua_chon == 1:
             nhap_san_pham()
         elif lua_chon == 2:
@@ -287,7 +292,7 @@ if __name__ == "__main__":
             xoa_khach_hang()
         elif lua_chon == 11:
             nhap_nhan_vien()
-        elif lua_chon == 20:
+        elif lua_chon == 25:
             print("Cảm ơn bạn đã sử dụng chương trình!")
             break
         else:
